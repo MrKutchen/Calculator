@@ -28,6 +28,7 @@ public class CustomFeatures {
                 switch (input) {
                     case 1:
                         CoreFeatures.changeDisplay();
+                        break;
                     case 2:
                         radius();
                         break;
