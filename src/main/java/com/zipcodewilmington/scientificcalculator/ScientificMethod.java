@@ -268,3 +268,4 @@ public class ScientificMethod {
             System.out.println("Err - Choose a correct option, you're a Zip Coder!");
         }
     }
+}
