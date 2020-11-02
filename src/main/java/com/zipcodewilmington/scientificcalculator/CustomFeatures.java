@@ -14,7 +14,6 @@ public class CustomFeatures {
         boolean powerOn = true;
         while (powerOn) {
             Console.println("\n" +
-                    Console.println("\n" +
                     "Please choose from the following options:\n" +
                     "1 - Change the Display Value\n" +
                     "2 - Convert the Display to Radius\n" +
