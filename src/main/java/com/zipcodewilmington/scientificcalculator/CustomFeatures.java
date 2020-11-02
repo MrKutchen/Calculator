@@ -18,7 +18,8 @@ public class CustomFeatures {
                     "1 - Change the Display Value\n" +
                     "2 - Convert the Display to Radius\n" +
                     "3 - Try out some Conversions\n" +
-                    "4 - Main Menu\n" + "\n" +
+                    "4 - Reset Display\n" +
+                    "5 - Main Menu\n" + "\n" +
                     "Enter choice here: -> ");
 
 
@@ -34,6 +35,9 @@ public class CustomFeatures {
                         conversion();
                         break;
                     case 4:
+                        CoreFeatures.clearDisplay();
+                        break;
+                    case 5:
                         powerOn = false;
                         break;
                     default:
