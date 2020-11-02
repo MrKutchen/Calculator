@@ -49,18 +49,23 @@ public class CoreFeatures {
                     case 5:
                         Constants.currentMemory = Constants.display;
                         CoreFeaturesCalculations.square();
+                        break;
                     case 6:
                         Constants.currentMemory = Constants.display;
                         CoreFeaturesCalculations.squareRoot();
+                        break;
                     case 7:
                         Constants.currentMemory = Constants.display;
                         CoreFeaturesCalculations.variableExponentiation();
+                        break;
                     case 8:
                         Constants.currentMemory = Constants.display;
                         CoreFeaturesCalculations.inverseOfTheNumber();
+                        break;
                     case 9:
                         Constants.currentMemory = Constants.display;
                         CoreFeaturesCalculations.invertTheSign();
+                        break;
                     case 10:
                         powerOn = false;
                         break;
@@ -88,7 +93,7 @@ public class CoreFeatures {
     }
 
     public static void changeDisplay() {
-        System.out.println("\n" + "Choose what you would like the display integer to be?");
+        System.out.println("\n" + "Choose what you would like the display value to be?");
         Constants.display = scanner.nextInt();
         currentDisplay();
     }

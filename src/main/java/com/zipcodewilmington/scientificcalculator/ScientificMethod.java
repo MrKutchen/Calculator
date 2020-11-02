@@ -1,55 +1,319 @@
 package com.zipcodewilmington.scientificcalculator;
 
-//import java.io.*;
-import java.lang.Math;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class ScientificMethod {
+    public static Scanner scanner = new Scanner(System.in);
 
+    public static void scientificMethodOptions() {
+        boolean powerOn = true;
+        while (powerOn) {
+            Console.println("\n" +
+                    "Please choose from the following options:\n" +
+                    "1 - Change Current Display Value\n" +
+                    "2 - Clear Current Display\n" +
+                    "3 - Current Display Mode\n" +
+                    "4 - Switch Display Mode\n" +
+                    "5 - Choose Display Mode\n" +
+                    "6 - Trig Functions\n" +
+                    "7 - Switch Units (Degrees, Radians)\n" +
+                    "8 - Choose Units\n" +
+                    "9 - Logarithmic Functions\n" +
+                    "10 - Factorial Function\n" +
+                    "11 - Main Menu\n" + "\n" +
+                    "Enter choice here: -> ");
 
-
-    public static Integer factorial(Integer enteredNum){
-        Integer factValue = 1;
-        for(int i=1; i <= enteredNum; i++ ){
-            factValue = factValue*i;
+            try {
+                int input = scanner.nextInt();
+                switch (input) {
+                    case 1:
+                        CoreFeatures.changeDisplay();
+                        break;
+                    case 2:
+                        CoreFeatures.clearDisplay();
+                    case 3:
+                        currentDisplayMode();
+                        break;
+                    case 4:
+                        switchDisplayMode();
+                        break;
+                    case 5:
+                        chooseDisplayMode();
+                        break;
+                    case 6:
+                        trigOptions();
+                        break;
+                    case 7:
+                        switchRadAndDeg();
+                        break;
+                    case 8:
+                        chooseRadAndDeg();
+                        break;
+                    case 9:
+                        chooseLogFunction();
+                        break;
+                    case 10:
+                        ScientificMethodCalculations.factorial();
+                        break;
+                    case 11:
+                        CoreFeatures.clearDisplay();
+                        powerOn = false;
+                        break;
+                    default:
+                        System.out.println("\n" + "Err - Choose a correct option, you're a Zip Coder!");
+                        break;
+                }
+            } catch (InputMismatchException e) {
+                scanner.next();
+                System.out.println("\n" + "Err - Choose a correct option, you're a Zip Coder!");
+            }
         }
-        return  factValue;
     }
 
-    public static Double log(Double enteredNum){
-        Double result = Math.log10(enteredNum);
+    public static void currentDisplayMode() {
+        System.out.println("\n" + "Current Display Mode - " + Constants.displayMode);
+        switch (Constants.displayMode) {
+            case "Binary":
+                System.out.println(Constants.displayModeValues);
+                break;
+            case "Octal":
+                System.out.println(Constants.displayModeValues);
+                break;
+            case "Hexadecimal":
+                System.out.println(Constants.displayModeValues);
+                break;
+            default:
+                System.out.println(Constants.display);
+                break;
+        }
 
-        //gives the Logarithmic of a number when the base is 10
 
-        return result;
     }
 
-    public static Double inverseLog(Double enteredNum){
-        Double result = Math.pow(10.00, enteredNum);
-        //10^x == y
+    public static void switchDisplayMode() {
+        int wrapInt = (int) Constants.display;
+        String firstDisplay = "Binary";
+        String secondDisplay = "Octal";
+        String thirdDisplay = "Hexadecimal";
+        String fourthDisplay = "Decimal";
 
-        return result;
+        if (Constants.displayModeCount == 1) {
+            Constants.displayMode = firstDisplay;
+            Constants.displayModeValues = Integer.toBinaryString(wrapInt);
+            System.out.println("\n" + "Current Display Mode = " +
+                    Constants.displayMode + " " + Integer.toBinaryString(wrapInt));
+            Constants.displayModeCount++;
+        } else if (Constants.displayModeCount == 2) {
+            Constants.displayMode = secondDisplay;
+            Constants.displayModeValues = Integer.toOctalString(wrapInt);
+            System.out.println("\n" + "Current Display Mode = " +
+                    Constants.displayMode + " " + Integer.toOctalString(wrapInt));
+            Constants.displayModeCount++;
+        } else if (Constants.displayModeCount == 3) {
+            Constants.displayMode = thirdDisplay;
+            Constants.displayModeValues = Integer.toHexString(wrapInt);
+            System.out.println("\n" + "Current Display Mode = " +
+                    Constants.displayMode + " " + Integer.toHexString(wrapInt));
+            Constants.displayModeCount++;
+        } else if (Constants.displayModeCount == 4) {
+            Constants.displayMode = fourthDisplay;
+            Constants.display = Integer.parseInt(String.valueOf(wrapInt));
+            System.out.println("\n" + "Current Display Mode = " +
+                    Constants.displayMode + " " + (double) Integer.parseInt(String.valueOf(wrapInt)));
+            Constants.displayModeCount = 1;
+        }
     }
 
-
-    public static Double naturalLog(Double enteredNum){
-        Double result = Math.log(enteredNum);
-
-        /*returns the natural logarithm (base e) of a double value.
-        //if the argument is NAN or less than zero, then the result is NAN
-        if the argument is positive infinity, then the result is positive infinity*/
-
-        return result;
+    public static void chooseDisplayMode() {
+        //[binary, octal, decimal, hexadecimal]
+        try {
+            System.out.println("\n" + "Choose which Display Mode you would like to use?\n" +
+                    "1 - Binary, 2 - Octal, 3 - Hexadecimal, 4 - Decimal");
+            int mode = scanner.nextInt();
+            int wrapInt = (int) Constants.display;
+            switch (mode) {
+                case 1:
+                    System.out.println("\n" + "Current Display Mode = " +
+                            Constants.displayMode + " " + Integer.toBinaryString(wrapInt));
+                    break;
+                case 2:
+                    System.out.println("\n" + "Current Display Mode = " +
+                            Constants.displayMode + " " + Integer.toOctalString(wrapInt));
+                    break;
+                case 3:
+                    System.out.println("\n" + "Current Display Mode = " +
+                            Constants.displayMode + " " + Integer.toHexString(wrapInt));
+                    System.out.println(Integer.toHexString(wrapInt));
+                    break;
+                case 4:
+                    System.out.println("\n" + "Current Display Mode = " +
+                            Constants.displayMode + " " + Integer.parseInt(String.valueOf(wrapInt)));
+                default:
+                    System.out.println("\n" + "Err - Choose a correct option, you're a Zip Coder!");
+                    break;
+            }
+        } catch (InputMismatchException e) {
+            scanner.next();
+            System.out.println("Err - Choose a correct option, you're a Zip Coder!");
+        }
     }
 
-
-    public static Double inverseNaturalLog(Double enteredNum){
-        Double result = Math.exp(enteredNum);
-
-        //returns euler’s number 'e' raised to the power of a double value
-
-        return result;
+    public static void trigOptions() {
+        try {
+            System.out.println("\n" + "Choose which trig function you would like to use on the current display value?\n" +
+                    "1 - Sine, 2 - Cosine, 3 - Tangent, 4 - Inverse Sine, 5 - Inverse Cosine, 6 - Inverse Tangent");
+            int trigFunctions = scanner.nextInt();
+            switch (trigFunctions) {
+                case 1:
+                    ScientificMethodCalculations.getSine();
+                    CoreFeatures.currentDisplay();
+                    break;
+                case 2:
+                    ScientificMethodCalculations.getCosine();
+                    CoreFeatures.currentDisplay();
+                    break;
+                case 3:
+                    ScientificMethodCalculations.getTangent();
+                    CoreFeatures.currentDisplay();
+                    break;
+                case 4:
+                    ScientificMethodCalculations.getInSine();
+                    CoreFeatures.currentDisplay();
+                    break;
+                case 5:
+                    ScientificMethodCalculations.getInCosine();
+                    CoreFeatures.currentDisplay();
+                    break;
+                case 6:
+                    ScientificMethodCalculations.getInTangent();
+                    CoreFeatures.currentDisplay();
+                    break;
+                default:
+                    System.out.println("\n" + "Err - Choose a correct option, you're a Zip Coder!");
+                    break;
+            }
+        } catch (InputMismatchException e) {
+            scanner.next();
+            System.out.println("Err - Choose a correct option, you're a Zip Coder!");
+        }
     }
 
+    public static void switchRadAndDeg() {
+        if (Constants.radOrDeg == false) {
+            convToDegree();
+            Constants.radOrDeg = true;
+        } else if (Constants.radOrDeg == true) {
+            convToRad();
+            Constants.radOrDeg = false;
+        }
+    }
 
+    public static void chooseRadAndDeg() {
+        System.out.println("Please choose if you would like Radians or Degrees?\n" +
+                "1 - Degrees, 2 - Radians");
+        int result = scanner.nextInt();
+        if (result == 1  && !Constants.radOrDeg) {
+            convToDegree();
+            Constants.radOrDeg = true;
+        } else if (result == 2 && Constants.radOrDeg) {
+            convToRad();
+            Constants.radOrDeg = false;
+        } else {
+            System.out.println(Constants.display + " - Degrees");
+        }
+    }
+
+    public static void convToDegree() {
+        Constants.display *= 57.2958;
+        System.out.println(Constants.display + " - Decimal");
+    }
+
+    public static void convToRad() {
+        Constants.display /= 57.2958;
+        System.out.println(Constants.display + " - Radians");
+    }
+
+    public static void chooseLogFunction() {
+        //[binary, octal, decimal, hexadecimal]
+        try {
+            System.out.println("\n" + "Choose which Log Function you would like to use on the current display value?\n" +
+                    "1 - Log, 2 - 10^x (inverse log), 3 - Ln (natural log), 4 - e^x (inverse natural log) ");
+            int logs = scanner.nextInt();
+            switch (logs) {
+                case 1:
+                    ScientificMethodCalculations.log();
+                    break;
+                case 2:
+                    ScientificMethodCalculations.inverseLog();
+                    break;
+                case 3:
+                    ScientificMethodCalculations.naturalLog();
+                    break;
+                case 4:
+                    ScientificMethodCalculations.inverseNaturalLog();
+                    break;
+                default:
+                    System.out.println("\n" + "Err - Choose a correct option, you're a Zip Coder!");
+                    break;
+            }
+        } catch (InputMismatchException e) {
+            scanner.next();
+            System.out.println("Err - Choose a correct option, you're a Zip Coder!");
+        }
+    }
+
+//    public void displayUnitsMode() {
+//        String unitValue = "";
+//        if (radOrDeg) {
+//            unitValue = "Degrees";
+//        } else {
+//            unitValue = "Radians";
+//        }
+//        System.out.println("Current unit set to " + unitValue);
+//        System.out.println("Your options are Radians or Degrees");
+//    }
+//
+//    public void switchUnitsMode(String unit) {
+//        if (unit.equals("Radians")) {
+//            radOrDeg = false;
+//            System.out.println("Unit set to Radians");
+//        } else if (unit.equals("Degrees")) {
+//            radOrDeg = true;
+//            System.out.println("Unit set to Degrees");
+//        } else {
+//            System.out.println("Invalid entry, please redo command.");
+//        }
+//    }
+
+//    public double degToRad(double deg){
+//        double degInput;
+//        degInput = Math.toRadians(deg);
+//        return degInput;
+//    }
+
+    //        try {
+//            String mode = scanner.nextLine();
+//            switch (mode) {
+//                case "Binary":
+//                    Constants.displayMode = "Binary";
+//                    break;
+//                case "Octal":
+//                    Constants.displayMode = "Octal";
+//                    break;
+//                case "Decimal":
+//                    Constants.displayMode = "Decimal";
+//                    break;
+//                case "Hexadecimal":
+//                    Constants.displayMode = "Hexadecimal";
+//                    break;
+//                default:
+//                    System.out.println("\n" + "Err - Choose a correct option, you're a Zip Coder!");
+//                    break;
+//            }
+//        } catch (InputMismatchException e) {
+//            scanner.next();
+//            System.out.println("\n" + "Err - Choose a correct option, you're a Zip Coder!");
+//        }
+//    }
 }

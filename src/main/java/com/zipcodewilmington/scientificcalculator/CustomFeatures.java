@@ -16,9 +16,8 @@ public class CustomFeatures {
             Console.println("\n" +
                     "Please choose from the following options:\n" +
                     "1 - Convert the Display to Radius\n" +
-                    "2 - Reset Memory\n" +
-                    "3 - Recall Current Value from Memory to Display\n" +
-                    "4 - Main Menu\n" + "\n" +
+                    "2 - Try out some Conversions\n" +
+                    "3 - Main Menu\n" + "\n" +
                     "Enter choice here: -> ");
 
 
@@ -31,7 +30,7 @@ public class CustomFeatures {
                     case 2:
                         conversion();
                         break;
-                    case 4:
+                    case 3:
                         powerOn = false;
                         break;
                     default:
@@ -64,27 +63,27 @@ public class CustomFeatures {
             switch (k) {
                 case 1:
                     double milliCent = Constants.display / 10;
-                    System.out.println(Constants.display + "millimeters equals " + milliCent + "centimeters");
+                    System.out.println(Constants.display + " millimeters equals " + milliCent + " centimeters");
                     break;
                 case 2:
                     double centMilli = Constants.display * 10;
-                    System.out.println(Constants.display + "cenetimeters equals " + centMilli + "millimeters");
+                    System.out.println(Constants.display + " centimeters equals " + centMilli + " millimeters");
                     break;
                 case 3:
                     double centInch = Constants.display * 0.393701;
-                    System.out.println(Constants.display + "centimeters equals " + centInch + "inches");
+                    System.out.println(Constants.display + " centimeters equals " + centInch + " inches");
                     break;
                 case 4:
                     double inchCent = Constants.display * 2.54;
-                    System.out.println(Constants.display + "inches equals " + inchCent + "centimeters");
+                    System.out.println(Constants.display + " inches equals " + inchCent + " centimeters");
                     break;
                 case 5:
                     double inchFeet = Constants.display / 12;
-                    System.out.println(Constants.display + "inches equals " + inchFeet + "feet");
+                    System.out.println(Constants.display + " inches equals " + inchFeet + " feet");
                     break;
                 case 6:
                     double feetInch = Constants.display * 12;
-                    System.out.println(Constants.display + "feet equals " + feetInch + "inches");
+                    System.out.println(Constants.display + " feet equals " + feetInch + " inches");
                     break;
                 default:
                     System.out.println("\n" + "Err - Choose a correct option, you're a Zip Coder!");
