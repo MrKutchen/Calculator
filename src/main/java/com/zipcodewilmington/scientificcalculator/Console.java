@@ -42,7 +42,7 @@ public class Console {
                         CoreFeatures.coreFeaturesOptions();
                         break;
                     case 2:
-                        System.out.println(Constants.currentMemory);
+                        ScientificMethod.scientificMethodOptions();
                         break;
                     case 3:
                         CustomFeatures.customFeaturesOptions();
@@ -64,19 +64,4 @@ public class Console {
             }
         }
     }
-//
-//    public static String getStringInput(String prompt) {
-//        Scanner scanner = new Scanner(System.in);
-//        println(prompt);
-//        String userInput = scanner.nextLine();
-//        return userInput;
-//    }
-
-//    public static Integer getIntegerInput(String prompt) {
-//        return null;
-//    }
-//
-//    public static Double getDoubleInput(String prompt) {
-//        return null;
-//    }
 }

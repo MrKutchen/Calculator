@@ -8,64 +8,66 @@ import java.util.Scanner;
 
 public class CoreFeaturesCalculations {
     private static final Scanner scanner = new Scanner(System.in);
-    public static String whichInt = "What integer would you like to use?";
+    public double getDisplayValue() {
+        return Constants.display;
+    }
 
     public static void add() {
-        System.out.println("What integer would you like to add to the display value?");
-        CoreFeatures.currentDisplay();
+        System.out.println("\n What value would you like to add to the display?");
         Constants.display += scanner.nextDouble();
         CoreFeatures.currentDisplay();
     }
 
     public static void subtract() {
-        System.out.println("What integer would you like to subtract from he display value?");
-        CoreFeatures.currentDisplay();
+        System.out.println("\n What value would you like to subtract from he display value?");
         Constants.display -= scanner.nextDouble();
         CoreFeatures.currentDisplay();
     }
 
     public static void multiply() {
-        System.out.println("What integer would you like to multiply the display value by?");
-        CoreFeatures.currentDisplay();
+        System.out.println("\n What value would you like to multiply the display value by?");
         Constants.display *= scanner.nextDouble();
         CoreFeatures.currentDisplay();
     }
 
     public static void divide() {
-        System.out.println("What integer would you like to divide the display value by?");
-        CoreFeatures.currentDisplay();
+        System.out.println("\n What value would you like to divide the display value by?");
         Constants.display /= scanner.nextDouble();
         CoreFeatures.currentDisplay();
     }
 
     public static void square() {
-        System.out.println(whichInt + "This will take the current value and raise it to your input integer.");
-        Constants.display = Math.pow(Constants.display, scanner.nextDouble());
+        Constants.display = Math.pow(Constants.display, 2);
         CoreFeatures.currentDisplay();
     }
 
     public static void squareRoot() {
-        System.out.println(whichInt + "This will square the input integer.");
-        Constants.display = Math.sqrt(scanner.nextDouble());
+        Constants.display = Math.sqrt(Constants.display);
         CoreFeatures.currentDisplay();
     }
 
     public static void variableExponentiation() {
-        System.out.println("Please input the first integer you would like to use, press enter, then input the second and press enter. (x^y)");
+        System.out.println("\n Please input the first value you would like to use, press enter, then input the second value and press enter. (x^y)");
         Constants.display = Math.pow(scanner.nextDouble(), scanner.nextDouble());
         CoreFeatures.currentDisplay();
     }
 
     public static void inverseOfTheNumber() {
-        System.out.println("Here is the inverse of the display value.");
-        Constants.display = 1 / Constants.display;
-        CoreFeatures.currentDisplay();
+        if (Constants.display == 0) {
+            System.out.println("\n You can't divide by zero!");
+        } else {
+            Constants.display = 1 / Constants.display;
+            CoreFeatures.currentDisplay();
+        }
     }
 
     public static void invertTheSign() {
-        System.out.println("Here is the display value with the sign of the integer inverted.");
-        Constants.display = Constants.display * -1;
-        CoreFeatures.currentDisplay();
+        if (Constants.display == 0) {
+            System.out.println("\n You can't invert zero!");
+        } else {
+            Constants.display = Constants.display * -1;
+            CoreFeatures.currentDisplay();
+        }
     }
 
 }
