@@ -54,7 +54,8 @@ public class ScientificMethod {
                         chooseLogFunction();
                         break;
                     case 10:
-                        ScientificMethodCalculations.factorial();
+                        ScientificMethodCalculations.factorial((int)Constants.display);
+                        CoreFeatures.currentDisplay();
                         break;
                     case 11:
                         CoreFeatures.clearDisplay();
@@ -134,21 +135,25 @@ public class ScientificMethod {
             int wrapInt = (int) Constants.display;
             switch (mode) {
                 case 1:
+                    Constants.displayMode = "Binary";
                     System.out.println("\n" + "Current Display Mode = " +
                             Constants.displayMode + " " + Integer.toBinaryString(wrapInt));
                     break;
                 case 2:
+                    Constants.displayMode = "Octal";
                     System.out.println("\n" + "Current Display Mode = " +
                             Constants.displayMode + " " + Integer.toOctalString(wrapInt));
                     break;
                 case 3:
+                    Constants.displayMode = "Hexadecimal";
                     System.out.println("\n" + "Current Display Mode = " +
                             Constants.displayMode + " " + Integer.toHexString(wrapInt));
-                    System.out.println(Integer.toHexString(wrapInt));
                     break;
                 case 4:
+                    Constants.displayMode = "Decimal";
                     System.out.println("\n" + "Current Display Mode = " +
                             Constants.displayMode + " " + Integer.parseInt(String.valueOf(wrapInt)));
+                    break;
                 default:
                     System.out.println("\n" + "Err - Choose a correct option, you're a Zip Coder!");
                     break;
@@ -166,27 +171,27 @@ public class ScientificMethod {
             int trigFunctions = scanner.nextInt();
             switch (trigFunctions) {
                 case 1:
-                    ScientificMethodCalculations.getSine();
+                    ScientificMethodCalculations.getSine(Constants.display);
                     CoreFeatures.currentDisplay();
                     break;
                 case 2:
-                    ScientificMethodCalculations.getCosine();
+                    ScientificMethodCalculations.getCosine(Constants.display);
                     CoreFeatures.currentDisplay();
                     break;
                 case 3:
-                    ScientificMethodCalculations.getTangent();
+                    ScientificMethodCalculations.getTangent(Constants.display);
                     CoreFeatures.currentDisplay();
                     break;
                 case 4:
-                    ScientificMethodCalculations.getInSine();
+                    ScientificMethodCalculations.getInSine(Constants.display);
                     CoreFeatures.currentDisplay();
                     break;
                 case 5:
-                    ScientificMethodCalculations.getInCosine();
+                    ScientificMethodCalculations.getInCosine(Constants.display);
                     CoreFeatures.currentDisplay();
                     break;
                 case 6:
-                    ScientificMethodCalculations.getInTangent();
+                    ScientificMethodCalculations.getInTangent(Constants.display);
                     CoreFeatures.currentDisplay();
                     break;
                 default:
@@ -226,7 +231,7 @@ public class ScientificMethod {
 
     public static void convToDegree() {
         Constants.display *= 57.2958;
-        System.out.println(Constants.display + " - Decimal");
+        System.out.println(Constants.display + " - Degree");
     }
 
     public static void convToRad() {
@@ -242,16 +247,16 @@ public class ScientificMethod {
             int logs = scanner.nextInt();
             switch (logs) {
                 case 1:
-                    ScientificMethodCalculations.log();
+                    ScientificMethodCalculations.log((int)Constants.display);
                     break;
                 case 2:
-                    ScientificMethodCalculations.inverseLog();
+                    ScientificMethodCalculations.inverseLog((int)Constants.display);
                     break;
                 case 3:
-                    ScientificMethodCalculations.naturalLog();
+                    ScientificMethodCalculations.naturalLog((int)Constants.display);
                     break;
                 case 4:
-                    ScientificMethodCalculations.inverseNaturalLog();
+                    ScientificMethodCalculations.inverseNaturalLog((int)Constants.display);
                     break;
                 default:
                     System.out.println("\n" + "Err - Choose a correct option, you're a Zip Coder!");
