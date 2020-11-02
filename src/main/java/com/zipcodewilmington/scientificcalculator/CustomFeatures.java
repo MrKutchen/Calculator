@@ -16,7 +16,7 @@ public class CustomFeatures {
             Console.println("\n" +
                     "Please choose from the following options:\n" +
                     "1 - Change the Display Value\n" +
-                    "2 - Convert the Display to Radius\n" +
+                    "2 - Convert the Display to Area of Circle based on Radius\n" +
                     "3 - Try out some Conversions\n" +
                     "4 - Reset Display\n" +
                     "5 - Main Menu\n" + "\n" +
