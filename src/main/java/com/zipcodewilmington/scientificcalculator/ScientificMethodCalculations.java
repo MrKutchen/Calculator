@@ -5,96 +5,105 @@ import java.util.Scanner;
 public class ScientificMethodCalculations {
     public static Scanner scanner = new Scanner(System.in);
 
-    public static void getSine() {
+    public static double getSine(double value) {
         //default math method accepts radian
         if (Constants.radOrDeg) {
-            Constants.display = Math.sin(Constants.display);
+            Constants.display = Math.sin(value);
         } else {
-            Constants.display = Math.sin(Constants.display) * 57.2958;
+            Constants.display = Math.sin(value) * 57.2958;
         }
+        return Constants.display;
     }
 
-    public static void getCosine() {
+    public static double getCosine(double value) {
         //default math method accepts radian
         if (Constants.radOrDeg) {
-            Constants.display = Math.cos(Constants.display);
+            Constants.display = Math.cos(value);
         } else {
-            Constants.display = Math.cos(Constants.display) * 57.2958;
+            Constants.display = Math.cos(value) * 57.2958;
         }
+        return Constants.display;
     }
 
-    public static void getTangent() {
+    public static double getTangent(double value) {
         //default math method accepts radian
         if (Constants.radOrDeg) {
-            Constants.display = Math.tan(Constants.display);
+            Constants.display = Math.tan(value);
         } else {
-            Constants.display = Math.tan(Constants.display) * 57.2958;
+            Constants.display = Math.tan(value) * 57.2958;
         }
+        return Constants.display;
     }
 
-    public static void getInSine() {
+    public static double getInSine(double value) {
         //default math method accepts radian
         //default returns radian
         if (Constants.radOrDeg) {
-            Constants.display = Math.asin(Constants.display);
+            Constants.display = Math.asin(value);
         } else {
-            Constants.display = Math.asin(Constants.display) * 57.2958;
+            Constants.display = Math.asin(value) * 57.2958;
         }
+        return Constants.display;
     }
 
-    public static void getInCosine() {
+    public static double getInCosine(double value) {
         //default math method accepts radian
         if (Constants.radOrDeg) {
-            Constants.display = Math.acos(Constants.display);
+            Constants.display = Math.acos(value);
         } else {
-            Constants.display = Math.acos(Constants.display) * 57.2958;
+            Constants.display = Math.acos(value) * 57.2958;
         }
+        return Constants.display;
     }
 
-    public static void getInTangent() {
+    public static double getInTangent(double value) {
         //default math method accepts radian
         if (Constants.radOrDeg) {
-            Constants.display = Math.atan(Constants.display);
+            Constants.display = Math.atan(value);
         } else {
-            Constants.display = Math.atan(Constants.display) * 57.2958;
+            Constants.display = Math.atan(value) * 57.2958;
         }
+        return Constants.display;
     }
 
-    public static void factorial() {
-        int factValue = scanner.nextInt();
+    public static int factorial(int value) {
+        int factValue = value;
         int res = 1, i;
         for (i = 2; i <= factValue; i++) {
             res *= i;
             Constants.display = res;
         }
+        return (int)Constants.display;
     }
 
-    public static void log() {
-        Constants.display = Math.log10(Constants.display);
+    public static int log(int value) {
+        Constants.display = Math.log10(value);
         CoreFeatures.currentDisplay();
+        return (int)Constants.display;
         //gives the Logarithmic of a number when the base is 10
     }
 
-    public static void inverseLog() {
+    public static int inverseLog(int value) {
         Constants.display = Math.pow(10.00, Constants.display);
         CoreFeatures.currentDisplay();
         //10^x == y
+        return (int)Constants.display;
     }
 
 
-    public static void naturalLog() {
+    public static int naturalLog(int value) {
         Constants.display = Math.log(Constants.display);
         CoreFeatures.currentDisplay();
-
+        return (int)Constants.display;
         /*returns the natural logarithm (base e) of a double value.
         //if the argument is NAN or less than zero, then the result is NAN
         if the argument is positive infinity, then the result is positive infinity*/
     }
 
-    public static void inverseNaturalLog() {
+    public static int inverseNaturalLog(int value) {
         Constants.display = Math.exp(Constants.display);
         CoreFeatures.currentDisplay();
-
+        return (int)Constants.display;
         //returns euler’s number 'e' raised to the power of a double value
     }
 }

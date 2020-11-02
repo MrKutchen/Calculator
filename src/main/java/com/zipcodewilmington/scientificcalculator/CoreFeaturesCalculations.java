@@ -12,62 +12,66 @@ public class CoreFeaturesCalculations {
         return Constants.display;
     }
 
-    public static void add() {
-        System.out.println("\n What value would you like to add to the display?");
-        Constants.display += scanner.nextDouble();
+    public static double add(double value) {
+        Constants.display += value;
         CoreFeatures.currentDisplay();
+        return Constants.display;
     }
 
-    public static void subtract() {
-        System.out.println("\n What value would you like to subtract from he display value?");
-        Constants.display -= scanner.nextDouble();
+    public static double subtract(double value) {
+        Constants.display -= value;
         CoreFeatures.currentDisplay();
+        return Constants.display;
     }
 
-    public static void multiply() {
-        System.out.println("\n What value would you like to multiply the display value by?");
-        Constants.display *= scanner.nextDouble();
+    public static double multiply(double value) {
+        Constants.display *= value;
         CoreFeatures.currentDisplay();
+        return Constants.display;
     }
 
-    public static void divide() {
-        System.out.println("\n What value would you like to divide the display value by?");
-        Constants.display /= scanner.nextDouble();
+    public static double divide(double value) {
+        Constants.display /= value;
         CoreFeatures.currentDisplay();
+        return Constants.display;
     }
 
-    public static void square() {
-        Constants.display = Math.pow(Constants.display, 2);
+    public static double square(double value) {
+        Constants.display = Math.pow(value, 2);
         CoreFeatures.currentDisplay();
+        return Constants.display;
     }
 
-    public static void squareRoot() {
-        Constants.display = Math.sqrt(Constants.display);
+    public static double squareRoot(double value) {
+        Constants.display = Math.sqrt(value);
         CoreFeatures.currentDisplay();
+        return Constants.display;
     }
 
-    public static void variableExponentiation() {
-        System.out.println("\n Please input the first value you would like to use, press enter, then input the second value and press enter. (x^y)");
-        Constants.display = Math.pow(scanner.nextDouble(), scanner.nextDouble());
+    public static double variableExponentiation(double value1, double value2) {
+        Constants.display = Math.pow(value1, value2);
         CoreFeatures.currentDisplay();
+        return Constants.display;
     }
 
-    public static void inverseOfTheNumber() {
+    public static double inverseOfTheNumber(double value) {
         if (Constants.display == 0) {
             System.out.println("\n You can't divide by zero!");
         } else {
-            Constants.display = 1 / Constants.display;
+            Constants.display = 1 / value;
             CoreFeatures.currentDisplay();
         }
+        return Constants.display;
     }
 
-    public static void invertTheSign() {
+    public static double invertTheSign(double value) {
         if (Constants.display == 0) {
             System.out.println("\n You can't invert zero!");
         } else {
-            Constants.display = Constants.display * -1;
+            Constants.display = value * -1;
             CoreFeatures.currentDisplay();
         }
+        return Constants.display;
     }
 
 }
