@@ -32,6 +32,7 @@ public class ScientificMethod {
                         break;
                     case 2:
                         CoreFeatures.clearDisplay();
+                        break;
                     case 3:
                         currentDisplayMode();
                         break;
@@ -267,58 +268,3 @@ public class ScientificMethod {
             System.out.println("Err - Choose a correct option, you're a Zip Coder!");
         }
     }
-
-//    public void displayUnitsMode() {
-//        String unitValue = "";
-//        if (radOrDeg) {
-//            unitValue = "Degrees";
-//        } else {
-//            unitValue = "Radians";
-//        }
-//        System.out.println("Current unit set to " + unitValue);
-//        System.out.println("Your options are Radians or Degrees");
-//    }
-//
-//    public void switchUnitsMode(String unit) {
-//        if (unit.equals("Radians")) {
-//            radOrDeg = false;
-//            System.out.println("Unit set to Radians");
-//        } else if (unit.equals("Degrees")) {
-//            radOrDeg = true;
-//            System.out.println("Unit set to Degrees");
-//        } else {
-//            System.out.println("Invalid entry, please redo command.");
-//        }
-//    }
-
-//    public double degToRad(double deg){
-//        double degInput;
-//        degInput = Math.toRadians(deg);
-//        return degInput;
-//    }
-
-    //        try {
-//            String mode = scanner.nextLine();
-//            switch (mode) {
-//                case "Binary":
-//                    Constants.displayMode = "Binary";
-//                    break;
-//                case "Octal":
-//                    Constants.displayMode = "Octal";
-//                    break;
-//                case "Decimal":
-//                    Constants.displayMode = "Decimal";
-//                    break;
-//                case "Hexadecimal":
-//                    Constants.displayMode = "Hexadecimal";
-//                    break;
-//                default:
-//                    System.out.println("\n" + "Err - Choose a correct option, you're a Zip Coder!");
-//                    break;
-//            }
-//        } catch (InputMismatchException e) {
-//            scanner.next();
-//            System.out.println("\n" + "Err - Choose a correct option, you're a Zip Coder!");
-//        }
-//    }
-}
