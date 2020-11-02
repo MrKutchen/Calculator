@@ -24,6 +24,7 @@ public class CustomFeatures {
 
 
             try {
+                int input = scanner.nextInt();
                 switch (input) {
                     case 1:
                         CoreFeatures.changeDisplay();
@@ -42,6 +43,7 @@ public class CustomFeatures {
                     default:
                         System.out.println("\n" + "Err - Choose a correct option, you're a Zip Coder!");
                         break;
+                }
             } catch (InputMismatchException e) {
                 scanner.next();
                 System.out.println("\n" + "Err - Choose a correct option, you're a Zip Coder!");
