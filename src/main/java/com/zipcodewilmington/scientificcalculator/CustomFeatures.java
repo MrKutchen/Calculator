@@ -14,29 +14,35 @@ public class CustomFeatures {
         boolean powerOn = true;
         while (powerOn) {
             Console.println("\n" +
+                    Console.println("\n" +
                     "Please choose from the following options:\n" +
-                    "1 - Convert the Display to Radius\n" +
-                    "2 - Try out some Conversions\n" +
-                    "3 - Main Menu\n" + "\n" +
+                    "1 - Change the Display Value\n" +
+                    "2 - Convert the Display to Radius\n" +
+                    "3 - Try out some Conversions\n" +
+                    "4 - Reset Display\n" +
+                    "5 - Main Menu\n" + "\n" +
                     "Enter choice here: -> ");
 
 
             try {
-                int input = scanner.nextInt();
                 switch (input) {
                     case 1:
+                        CoreFeatures.changeDisplay();
+                    case 2:
                         radius();
                         break;
-                    case 2:
+                    case 3:
                         conversion();
                         break;
-                    case 3:
+                    case 4:
+                        CoreFeatures.clearDisplay();
+                        break;
+                    case 5:
                         powerOn = false;
                         break;
                     default:
                         System.out.println("\n" + "Err - Choose a correct option, you're a Zip Coder!");
                         break;
-                }
             } catch (InputMismatchException e) {
                 scanner.next();
                 System.out.println("\n" + "Err - Choose a correct option, you're a Zip Coder!");
