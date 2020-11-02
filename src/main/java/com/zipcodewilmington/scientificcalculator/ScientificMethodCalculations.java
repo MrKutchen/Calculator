@@ -67,11 +67,15 @@ public class ScientificMethodCalculations {
     }
 
     public static int factorial(int value) {
+        if (Constants.display == 0) {
+            System.out.println("Please change the display value to a value higher than 0.");
+        } else {
         int factValue = value;
         int res = 1, i;
         for (i = 2; i <= factValue; i++) {
             res *= i;
             Constants.display = res;
+            }
         }
         return (int)Constants.display;
     }
