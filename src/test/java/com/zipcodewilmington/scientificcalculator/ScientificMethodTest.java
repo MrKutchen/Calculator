@@ -1,19 +1,11 @@
 
 package com.zipcodewilmington.scientificcalculator;
 
-
-import com.zipcodewilmington.scientificcalculator.MainApplication;
-import com.zipcodewilmington.scientificcalculator.ScientificMethod;
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 /**
  * Created by leon on 2/9/18.
@@ -22,78 +14,105 @@ public class ScientificMethodTest {
 
     private final static Logger logger = Logger.getLogger(ScientificMethod.class.getName());
 
-    @Before
-    public void setUp() throws Exception {
-
-    }
-
-    @After
-    public void tearDown() throws Exception {
-
-    }
-
-
     @Test
     public void factorialTest() {
-
         logger.log(Level.INFO, "Testing Factorial");
-        Assertions.assertTrue(ScientificMethodCalculations.factorial(5) == 120);
+        Display displayValues = new Display();
+        displayValues.setDisplay(10);
+        ScientificMethodCalculations scientificMethodCalculations = new ScientificMethodCalculations(displayValues);
+        scientificMethodCalculations.factorial(displayValues);
+        Assertions.assertEquals(displayValues.getDisplay(), 3628800.0);
     }
 
     @Test
     public void naturalLogTest() {
 
         logger.log(Level.INFO, "Testing Natural Log");
-        Assertions.assertEquals(ScientificMethodCalculations.naturalLog(5), 4.0);
+        Display displayValues = new Display();
+        displayValues.setDisplay(10);
+        ScientificMethodCalculations scientificMethodCalculations = new ScientificMethodCalculations(displayValues);
+        scientificMethodCalculations.naturalLog(displayValues);
+        Assertions.assertEquals(displayValues.getDisplay(), 2.302585092994046);
     }
 
-    @Test
-    public void logTest() {
-        logger.log(Level.INFO, "Testing Logarithmic of a number when the base is 10");
-        Assertions.assertEquals(ScientificMethodCalculations.log(10), 1);
-    }
+//    @Test
+//    public void logTest() {
+//        logger.log(Level.INFO, "Testing Logarithmic of a number when the base is 10");
+//        Display displayValues = new Display();
+//        displayValues.setDisplay(10);
+//        ScientificMethodCalculations scientificMethodCalculations = new ScientificMethodCalculations(displayValues);
+//        scientificMethodCalculations.logTest(displayValues);
+//        Assertions.assertEquals(displayValues.getDisplay(), 3628800.0);
+//    }
 
     @Test
     public void inverseLogTest() {
         logger.log(Level.INFO, "Testing the inverse log 10^x ");
-        Assertions.assertEquals(ScientificMethodCalculations.inverseLog(1), 61304);
-
-
+        Display displayValues = new Display();
+        displayValues.setDisplay(10);
+        ScientificMethodCalculations scientificMethodCalculations = new ScientificMethodCalculations(displayValues);
+        scientificMethodCalculations.inverseLog(displayValues);
+        Assertions.assertEquals(displayValues.getDisplay(), 1.0E10);
     }
 
     @Test
     public void getSine() {
         logger.log(Level.INFO, "Testing the Sine Function");
-        Assertions.assertEquals(CoreFeaturesCalculations.add(5), 10.0);
+        Display displayValues = new Display();
+        displayValues.setDisplay(10);
+        ScientificMethodCalculations scientificMethodCalculations = new ScientificMethodCalculations(displayValues);
+        scientificMethodCalculations.getSine(displayValues);
+        Assertions.assertEquals(displayValues.getDisplay(), -31.170124765295153);
     }
 
     @Test
     public void getCosine() {
         logger.log(Level.INFO, "Testing the Cosine Function");
-        Assertions.assertEquals(CoreFeaturesCalculations.add(5), 15.0);
+        Display displayValues = new Display();
+        displayValues.setDisplay(10);
+        ScientificMethodCalculations scientificMethodCalculations = new ScientificMethodCalculations(displayValues);
+        scientificMethodCalculations.getCosine(displayValues);
+        Assertions.assertEquals(displayValues.getDisplay(), -48.075274515658606);
     }
 
     @Test
     public void getTangent() {
         logger.log(Level.INFO, "Testing the Tangent Function");
-        Assertions.assertEquals(CoreFeaturesCalculations.add(5), 5.0);
+        Display displayValues = new Display();
+        displayValues.setDisplay(10);
+        ScientificMethodCalculations scientificMethodCalculations = new ScientificMethodCalculations(displayValues);
+        scientificMethodCalculations.getTangent(displayValues);
+        Assertions.assertEquals(displayValues.getDisplay(), 37.14835229793034);
     }
 
     @Test
     public void getInSine() {
         logger.log(Level.INFO, "Testing the InSine Function");
-        Assertions.assertEquals(CoreFeaturesCalculations.add(5), 6.0);
+        Display displayValues = new Display();
+        displayValues.setDisplay(10);
+        ScientificMethodCalculations scientificMethodCalculations = new ScientificMethodCalculations(displayValues);
+        scientificMethodCalculations.getInSine(displayValues);
+        Assertions.assertEquals(displayValues.getDisplay(), Double.NaN);
     }
 
     @Test
     public void getInCosine() {
         logger.log(Level.INFO, "Testing the InCosine Function");
-        Assertions.assertEquals(CoreFeaturesCalculations.add(5), 61309.41362633611);
+        Display displayValues = new Display();
+        displayValues.setDisplay(-100);
+        ScientificMethodCalculations scientificMethodCalculations = new ScientificMethodCalculations(displayValues);
+        scientificMethodCalculations.getInCosine(displayValues);
+        Assertions.assertEquals(displayValues.getDisplay(), Double.NaN);
+
     }
 
     @Test
     public void getInTangent() {
         logger.log(Level.INFO, "Testing the InTangent Function");
-        Assertions.assertEquals(CoreFeaturesCalculations.add(5), 61314.41362633611);
+        Display displayValues = new Display();
+        displayValues.setDisplay(10);
+        ScientificMethodCalculations scientificMethodCalculations = new ScientificMethodCalculations(displayValues);
+        scientificMethodCalculations.getInTangent(displayValues);
+        Assertions.assertEquals(displayValues.getDisplay(), 84.28943700137192);
     }
 }

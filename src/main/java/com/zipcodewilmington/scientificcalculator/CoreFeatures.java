@@ -9,9 +9,18 @@ import java.util.Scanner;
 
 public class CoreFeatures {
 
+    private Display displayValues;
+    private CoreFeaturesCalculations calculations;
+
+    public CoreFeatures(Display displayValues, CoreFeaturesCalculations calculations) {
+        this.displayValues = displayValues;
+        this.calculations = calculations;
+    }
+
     private static final Scanner scanner = new Scanner(System.in);
 
-    public static void coreFeaturesOptions() {
+    public void coreFeaturesOptions() {
+
         boolean powerOn = true;
         while (powerOn) {
             System.out.print("\n" + "Choose one of the following options:\n" +
@@ -31,41 +40,41 @@ public class CoreFeatures {
                 int input = scanner.nextInt();
                 switch (input) {
                     case 1:
-                        Constants.currentMemory = Constants.display;
-                        CoreFeatures.currentDisplay();
+                        displayValues.setCurrentMemory(displayValues.getDisplay());
+                        displayValues.currentDisplay();
                         break;
                     case 2:
-                        Constants.currentMemory = Constants.display;
-                        CoreFeatures.clearDisplay();
+                        displayValues.setCurrentMemory(displayValues.getDisplay());
+                        displayValues.clearDisplay();
                         break;
                     case 3:
-                        Constants.currentMemory = Constants.display;
-                        CoreFeatures.changeDisplay();
+                        displayValues.setCurrentMemory(displayValues.getDisplay());
+                        displayValues.changeDisplay();
                         break;
                     case 4:
-                        Constants.currentMemory = Constants.display;
-                        CoreFeatures.basicOperators();
+                        displayValues.setCurrentMemory(displayValues.getDisplay());
+                        basicOperators(displayValues);
                         break;
                     case 5:
-                        Constants.currentMemory = Constants.display;
-                        CoreFeaturesCalculations.square(Constants.display);
+                        displayValues.setCurrentMemory(displayValues.getDisplay());
+                        calculations.square();
                         break;
                     case 6:
-                        Constants.currentMemory = Constants.display;
-                        CoreFeaturesCalculations.squareRoot(Constants.display);
+                        displayValues.setCurrentMemory(displayValues.getDisplay());
+                        calculations.squareRoot();
                         break;
                     case 7:
-                        Constants.currentMemory = Constants.display;
+                        displayValues.setCurrentMemory(displayValues.getDisplay());
                         System.out.println("\n Please input the first value you would like to use, press enter, then input the second value and press enter. (x^y)");
-                        CoreFeaturesCalculations.variableExponentiation(scanner.nextDouble(), scanner.nextDouble());
+                        calculations.variableExponentiation(scanner.nextDouble(), scanner.nextDouble());
                         break;
                     case 8:
-                        Constants.currentMemory = Constants.display;
-                        CoreFeaturesCalculations.inverseOfTheNumber(Constants.display);
+                        displayValues.setCurrentMemory(displayValues.getDisplay());
+                        calculations.inverseOfTheNumber();
                         break;
                     case 9:
-                        Constants.currentMemory = Constants.display;
-                        CoreFeaturesCalculations.invertTheSign(Constants.display);
+                        displayValues.setCurrentMemory(displayValues.getDisplay());
+                        calculations.invertTheSign();
                         break;
                     case 10:
                         powerOn = false;
@@ -81,25 +90,7 @@ public class CoreFeatures {
         }
     }
 
-    public static void currentDisplay() {
-        System.out.println("---------------------------------\n" +
-                "CURRENT DISPLAY = " + Constants.display + "\n" +
-                "---------------------------------\n");
-    }
-
-    public static void clearDisplay() {
-        Constants.display = 0;
-        System.out.println("\n" + "Display has been cleared.");
-        currentDisplay();
-    }
-
-    public static void changeDisplay() {
-        System.out.println("\n" + "Choose what you would like the display value to be?");
-        Constants.display = scanner.nextInt();
-        currentDisplay();
-    }
-
-    public static void basicOperators() {
+    public void basicOperators(Display displayValues) {
         try {
             System.out.println("\n" + "Choose which operator you would like to use (+, -, *, /)?");
             String operators = scanner.next();
@@ -107,22 +98,22 @@ public class CoreFeatures {
                 case "+":
                     System.out.println("\n What value would you like to add to the display?");
                     double valueAdd = scanner.nextDouble();
-                    CoreFeaturesCalculations.add(valueAdd);
+                    this.calculations.add(valueAdd);
                     break;
                 case "-":
                     System.out.println("\n What value would you like to subtract from the display value?");
                     double valueSubtract = scanner.nextDouble();
-                    CoreFeaturesCalculations.subtract(valueSubtract);
+                    this.calculations.subtract(valueSubtract);
                     break;
                 case "*":
                     System.out.println("\n What value would you like to multiply the display value by?");
                     double valueMulti = scanner.nextDouble();
-                    CoreFeaturesCalculations.multiply(valueMulti);
+                    this.calculations.multiply(valueMulti);
                     break;
                 case "/":
                     System.out.println("\n What value would you like to divide the display value by?");
                     double valueDivide = scanner.nextDouble();
-                    CoreFeaturesCalculations.divide(valueDivide);
+                    this.calculations.divide(valueDivide);
                     break;
                 default:
                     System.out.println("\n" + "Err - Choose a correct option, you're a Zip Coder!");

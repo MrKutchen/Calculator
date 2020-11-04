@@ -17,9 +17,18 @@ public class Console {
     }
 
     public static void runTheConsole() {
+        Display displayValues = new Display();
+
+        CoreFeaturesCalculations calculations = new CoreFeaturesCalculations(displayValues);
+
+        CoreFeatures core = new CoreFeatures(displayValues, calculations);
+        
+        ScientificMethod scienceMethodValuesToPass = new ScientificMethod(displayValues);
+
         Scanner scanner = new Scanner(System.in);
         boolean powerOn = true;
         System.out.println("Beep, Bop, Clunky Noises....Powering ON....\n" +
+
                 "Welcome to our c3 calculator!");
         while (powerOn) {
             Console.println("\n" +
@@ -30,7 +39,7 @@ public class Console {
                     "4 - Memory\n" +
                     "5 - Power Down\n" +
                     "---------------------------------\n" +
-                    "CURRENT DISPLAY = " + Constants.display + "\n" +
+                    "CURRENT DISPLAY = " + displayValues.getDisplay() + "\n" +
                     "---------------------------------\n" +
                     "Enter choice here: -> ");
 
@@ -39,16 +48,16 @@ public class Console {
                 int input = scanner.nextInt();
                 switch (input) {
                     case 1:
-                        CoreFeatures.coreFeaturesOptions();
+                        core.coreFeaturesOptions();
                         break;
                     case 2:
-                        ScientificMethod.scientificMethodOptions();
+                        scienceMethodValuesToPass.scientificMethodOptions();
                         break;
                     case 3:
-                        CustomFeatures.customFeaturesOptions();
+                        CustomFeatures.customFeaturesOptions(displayValues);
                         break;
                     case 4:
-                        Memory.memoryOptions();
+                        Memory.memoryOptions(displayValues);
                         break;
                     case 5:
                         powerOn = false;

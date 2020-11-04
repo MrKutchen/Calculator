@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class Memory {
     public static Scanner scanner = new Scanner(System.in);
 
-    public static void memoryOptions() {
+    public static void memoryOptions(Display displayValues) {
         boolean powerOn = true;
         while (powerOn) {
             Console.println("\n" +
@@ -26,15 +26,15 @@ public class Memory {
                 int input = scanner.nextInt();
                 switch (input) {
                     case 1:
-                        addToMemory();
-                        CoreFeatures.currentDisplay();
+                        addToMemory(displayValues);
+                        displayValues.currentDisplay();
                         break;
                     case 2:
-                        resetMemory();
-                        displayMemory();
+                        resetMemory(displayValues);
+                        displayMemory(displayValues);
                         break;
                     case 3:
-                        displayMemory();
+                        displayMemory(displayValues);
                         break;
                     case 4:
                         powerOn = false;
@@ -51,22 +51,20 @@ public class Memory {
     }
 
 
-    public static void displayMemory() {
+    public static void displayMemory(Display displayValues) {
         System.out.println("---------------------------------\n" +
-                "CURRENT DISPLAY FROM MEMORY = " + Constants.currentMemory + "\n" +
+                "CURRENT DISPLAY FROM MEMORY = " + displayValues.getCurrentMemory() + "\n" +
                 "---------------------------------\n");
     }
 
-    public static void addToMemory() {
-        Constants.display += Constants.currentMemory;
-        double resultOfMemoryPlusDisplay = Constants.display += Constants.currentMemory;
-        CoreFeatures.currentDisplay();
-        Constants.currentMemory = resultOfMemoryPlusDisplay;
+    public static void addToMemory(Display displayValues) {
+        displayValues.setCurrentMemory(displayValues.getCurrentMemory() + displayValues.getDisplay());
+        displayMemory(displayValues);
     }
 
-    public static void resetMemory() {
-        Constants.currentMemory = 0;
-        displayMemory();
+    public static void resetMemory(Display displayValues) {
+        displayValues.setCurrentMemory(0);
+        displayMemory(displayValues);
     }
 
 }
