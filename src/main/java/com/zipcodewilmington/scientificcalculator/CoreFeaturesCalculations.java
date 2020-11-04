@@ -7,71 +7,73 @@ import java.util.Scanner;
  */
 
 public class CoreFeaturesCalculations {
+    private Display displayValues;
+
+    public CoreFeaturesCalculations(Display Display) {
+        this.displayValues = Display;
+    }
     private static final Scanner scanner = new Scanner(System.in);
-    public double getDisplayValue() {
-        return Constants.display;
+
+    public double add(double value) {
+        this.displayValues.setDisplay(displayValues.getDisplay() + value);
+        displayValues.currentDisplay();
+        return displayValues.getDisplay();
     }
 
-    public static double add(double value) {
-        Constants.display += value;
-        CoreFeatures.currentDisplay();
-        return Constants.display;
+    public double subtract(double value) {
+        this.displayValues.setDisplay(displayValues.getDisplay() - value);
+        displayValues.currentDisplay();
+        return displayValues.getDisplay();
     }
 
-    public static double subtract(double value) {
-        Constants.display -= value;
-        CoreFeatures.currentDisplay();
-        return Constants.display;
+    public double multiply(double value) {
+        this.displayValues.setDisplay(displayValues.getDisplay() * value);
+        displayValues.currentDisplay();
+        return displayValues.getDisplay();
     }
 
-    public static double multiply(double value) {
-        Constants.display *= value;
-        CoreFeatures.currentDisplay();
-        return Constants.display;
+    public double divide(double value) {
+        this.displayValues.setDisplay(displayValues.getDisplay() / value);
+        displayValues.currentDisplay();
+        return displayValues.getDisplay();
     }
 
-    public static double divide(double value) {
-        Constants.display /= value;
-        CoreFeatures.currentDisplay();
-        return Constants.display;
+    public double square() {
+        this.displayValues.setDisplay(Math.pow(displayValues.getDisplay(), 2));
+        displayValues.currentDisplay();
+        return displayValues.getDisplay();
     }
 
-    public static double square(double value) {
-        Constants.display = Math.pow(value, 2);
-        CoreFeatures.currentDisplay();
-        return Constants.display;
+    public double squareRoot() {
+        this.displayValues.setDisplay(Math.sqrt(displayValues.getDisplay()));
+        displayValues.currentDisplay();
+        return displayValues.getDisplay();
     }
 
-    public static double squareRoot(double value) {
-        Constants.display = Math.sqrt(value);
-        CoreFeatures.currentDisplay();
-        return Constants.display;
+    public double variableExponentiation(double value1, double value2) {
+        this.displayValues.setDisplay(Math.pow(value1, value2));
+        displayValues.currentDisplay();
+        return displayValues.getDisplay();
     }
 
-    public static double variableExponentiation(double value1, double value2) {
-        Constants.display = Math.pow(value1, value2);
-        CoreFeatures.currentDisplay();
-        return Constants.display;
-    }
-
-    public static double inverseOfTheNumber(double value) {
-        if (Constants.display == 0) {
+    public double inverseOfTheNumber() {
+        if (this.displayValues.getDisplay() == 0) {
             System.out.println("\n You can't divide by zero!");
         } else {
-            Constants.display = 1 / value;
-            CoreFeatures.currentDisplay();
+            this.displayValues.setDisplay(1 / displayValues.getDisplay());
+            displayValues.currentDisplay();
         }
-        return Constants.display;
+        return displayValues.getDisplay();
     }
 
-    public static double invertTheSign(double value) {
-        if (Constants.display == 0) {
+    public double invertTheSign() {
+        if (this.displayValues.getDisplay() == 0) {
             System.out.println("\n You can't invert zero!");
         } else {
-            Constants.display = value * -1;
-            CoreFeatures.currentDisplay();
+            this.displayValues.setDisplay(displayValues.getDisplay() * -1);
+            displayValues.currentDisplay();
         }
-        return Constants.display;
+        return displayValues.getDisplay();
     }
 
 }

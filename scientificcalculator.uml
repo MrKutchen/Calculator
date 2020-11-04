@@ -3,204 +3,215 @@
   <ID>JAVA</ID>
   <OriginalElement>com.zipcodewilmington.scientificcalculator</OriginalElement>
   <nodes>
-    <node x="473.0" y="765.0">com.zipcodewilmington.scientificcalculator.ScientificMethodCalculations</node>
-    <node x="860.9071712018142" y="224.0">com.zipcodewilmington.scientificcalculator.CoreFeaturesCalculations</node>
-    <node x="998.6373299319729" y="1545.0">com.zipcodewilmington.scientificcalculator.CustomFeaturesTest</node>
-    <node x="1207.637329931973" y="1468.0">com.zipcodewilmington.scientificcalculator.CoreFeaturesCalculationsTest</node>
-    <node x="773.6373299319729" y="1457.0">com.zipcodewilmington.scientificcalculator.ScientificMethodTest</node>
-    <node x="262.0" y="842.0">com.zipcodewilmington.scientificcalculator.Memory</node>
-    <node x="1519.637329931973" y="0.0">com.zipcodewilmington.scientificcalculator.ScientificMethod2</node>
-    <node x="642.8873299319729" y="550.0">com.zipcodewilmington.scientificcalculator.CoreFeatures</node>
-    <node x="0.0" y="1189.0">com.zipcodewilmington.scientificcalculator.CustomFeatures</node>
-    <node x="761.0" y="1112.0">com.zipcodewilmington.scientificcalculator.ScientificMethod</node>
-    <node x="265.1373299319729" y="1826.0">com.zipcodewilmington.scientificcalculator.MainApplication</node>
-    <node x="449.1571712018142" y="0.0">com.zipcodewilmington.scientificcalculator.Constants</node>
-    <node x="234.13732993197289" y="1567.5">com.zipcodewilmington.scientificcalculator.Console</node>
+    <node x="768.9742063492065" y="547.0">com.zipcodewilmington.scientificcalculator.CustomFeatures</node>
+    <node x="0.0" y="459.0">com.zipcodewilmington.scientificcalculator.ScientificMethodCalculations</node>
+    <node x="785.625" y="964.0">com.zipcodewilmington.scientificcalculator.ScientificMethod</node>
+    <node x="1051.625" y="1074.5">com.zipcodewilmington.scientificcalculator.MainApplication</node>
+    <node x="287.0" y="469.5">com.zipcodewilmington.scientificcalculator.CoreFeaturesCalculations</node>
+    <node x="481.7242063492065" y="1320.0">com.zipcodewilmington.scientificcalculator.CoreFeaturesCalculationsTest</node>
+    <node x="768.7242063492065" y="1397.0">com.zipcodewilmington.scientificcalculator.CustomFeaturesTest</node>
+    <node x="1029.9742063492065" y="536.0">com.zipcodewilmington.scientificcalculator.Memory</node>
+    <node x="256.7242063492065" y="1309.0">com.zipcodewilmington.scientificcalculator.ScientificMethodTest</node>
+    <node x="828.0297619047622" y="0.0">com.zipcodewilmington.scientificcalculator.Constants</node>
+    <node x="537.2468253968259" y="224.0">com.zipcodewilmington.scientificcalculator.CoreFeatures</node>
+    <node x="892.4789682539687" y="816.0">com.zipcodewilmington.scientificcalculator.Console</node>
   </nodes>
   <notes />
   <edges>
     <edge source="com.zipcodewilmington.scientificcalculator.ScientificMethod" target="com.zipcodewilmington.scientificcalculator.ScientificMethodCalculations">
-      <point x="-82.0" y="-137.5" />
-      <point x="802.0" y="1087.0" />
-      <point x="673.25" y="1087.0" />
+      <point x="-98.39999999999998" y="-137.5" />
+      <point x="810.225" y="944.0" />
+      <point x="137.2792929292932" y="944.0" />
+      <point x="137.2792929292932" y="796.0" />
+      <point x="200.25" y="796.0" />
       <point x="66.75" y="148.5" />
     </edge>
     <edge source="com.zipcodewilmington.scientificcalculator.ScientificMethodTest" target="com.zipcodewilmington.scientificcalculator.ScientificMethodCalculations">
-      <point x="-68.33333333333331" y="-159.5" />
-      <point x="807.8039965986395" y="1407.0" />
-      <point x="539.75" y="1407.0" />
+      <point x="-68.33333333333326" y="-159.5" />
+      <point x="290.89087301587324" y="1289.0" />
+      <point x="126.2792929292932" y="1289.0" />
+      <point x="126.2792929292932" y="796.0" />
+      <point x="66.75" y="796.0" />
       <point x="-66.75" y="148.5" />
     </edge>
     <edge source="com.zipcodewilmington.scientificcalculator.Memory" target="com.zipcodewilmington.scientificcalculator.CoreFeatures">
-      <point x="47.75" y="-71.5" />
-      <point x="405.25" y="735.0" />
-      <point x="670.6373299319729" y="735.0" />
-      <point x="-83.25" y="82.5" />
+      <point x="-47.75" y="-71.5" />
+      <point x="1077.7242063492065" y="409.0" />
+      <point x="743.389682539683" y="409.0" />
+      <point x="95.14285714285711" y="82.5" />
     </edge>
     <edge source="com.zipcodewilmington.scientificcalculator.Console" target="com.zipcodewilmington.scientificcalculator.Constants">
-      <point x="-43.3125" y="-49.0" />
-      <point x="306.3248299319729" y="1417.0" />
-      <point x="251.5" y="1417.0" />
-      <point x="251.5" y="194.0" />
-      <point x="494.8000283446714" y="194.0" />
-      <point x="-60.85714285714283" y="82.0" />
+      <point x="96.25" y="-49.0" />
+      <point x="1104.2289682539686" y="796.0" />
+      <point x="1231.4742063492067" y="796.0" />
+      <point x="1231.4742063492067" y="194.0" />
+      <point x="995.386904761905" y="194.0" />
+      <point x="60.85714285714289" y="82.0" />
     </edge>
     <edge source="com.zipcodewilmington.scientificcalculator.CustomFeatures" target="com.zipcodewilmington.scientificcalculator.Console">
       <point x="60.25" y="60.5" />
-      <point x="180.75" y="1427.0" />
-      <point x="277.4498299319729" y="1427.0" />
-      <point x="-72.1875" y="-49.0" />
+      <point x="949.7242063492065" y="776.0" />
+      <point x="988.7289682539687" y="776.0" />
+      <point x="-19.25" y="-49.0" />
     </edge>
     <edge source="com.zipcodewilmington.scientificcalculator.Console" target="com.zipcodewilmington.scientificcalculator.CustomFeatures">
-      <point x="-101.0625" y="-49.0" />
-      <point x="248.57482993197289" y="1437.0" />
-      <point x="60.25" y="1437.0" />
+      <point x="-57.75" y="-49.0" />
+      <point x="950.2289682539687" y="786.0" />
+      <point x="829.2242063492065" y="786.0" />
       <point x="-60.25" y="60.5" />
     </edge>
     <edge source="com.zipcodewilmington.scientificcalculator.CoreFeaturesCalculationsTest" target="com.zipcodewilmington.scientificcalculator.ScientificMethod">
-      <point x="-66.75" y="-148.5" />
-      <point x="1274.387329931973" y="1417.0" />
-      <point x="982.4000000000001" y="1417.0" />
-      <point x="98.39999999999998" y="137.5" />
+      <point x="66.75" y="-148.5" />
+      <point x="681.9742063492065" y="1279.0" />
+      <point x="908.625" y="1279.0" />
+      <point x="0.0" y="137.5" />
     </edge>
     <edge source="com.zipcodewilmington.scientificcalculator.CoreFeatures" target="com.zipcodewilmington.scientificcalculator.Constants">
-      <point x="-74.0" y="-82.5" />
-      <point x="679.8873299319729" y="530.0" />
-      <point x="664.6571712018142" y="530.0" />
-      <point x="664.6571712018142" y="204.0" />
-      <point x="586.0857426303857" y="204.0" />
-      <point x="30.428571428571445" y="82.0" />
+      <point x="0.0" y="-82.5" />
+      <point x="648.2468253968259" y="204.0" />
+      <point x="904.1011904761906" y="204.0" />
+      <point x="-30.428571428571445" y="82.0" />
     </edge>
     <edge source="com.zipcodewilmington.scientificcalculator.CoreFeaturesCalculationsTest" target="com.zipcodewilmington.scientificcalculator.CoreFeaturesCalculations">
-      <point x="66.75" y="-148.5" />
-      <point x="1407.887329931973" y="530.0" />
-      <point x="1171.407171201814" y="530.0" />
-      <point x="137.9999999999999" y="138.0" />
+      <point x="-66.75" y="-148.5" />
+      <point x="548.4742063492065" y="1259.0" />
+      <point x="496.625" y="1259.0" />
+      <point x="496.625" y="796.0" />
+      <point x="459.5" y="796.0" />
+      <point x="0.0" y="138.0" />
     </edge>
     <edge source="com.zipcodewilmington.scientificcalculator.ScientificMethod" target="com.zipcodewilmington.scientificcalculator.Constants">
-      <point x="82.0" y="-137.5" />
-      <point x="966.0" y="1087.0" />
-      <point x="1435.887329931973" y="1087.0" />
-      <point x="1435.887329931973" y="184.0" />
-      <point x="646.9428854875284" y="184.0" />
+      <point x="98.39999999999998" y="-137.5" />
+      <point x="1007.025" y="944.0" />
+      <point x="1242.4742063492067" y="944.0" />
+      <point x="1242.4742063492067" y="184.0" />
+      <point x="1025.8154761904764" y="184.0" />
       <point x="91.28571428571428" y="82.0" />
     </edge>
     <edge source="com.zipcodewilmington.scientificcalculator.Console" target="com.zipcodewilmington.scientificcalculator.ScientificMethod">
-      <point x="72.1875" y="-49.0" />
-      <point x="421.8248299319729" y="1427.0" />
-      <point x="785.6000000000001" y="1427.0" />
-      <point x="-98.39999999999998" y="137.5" />
+      <point x="0.0" y="49.0" />
+      <point x="1007.9789682539687" y="934.0" />
+      <point x="957.825" y="934.0" />
+      <point x="49.200000000000045" y="-137.5" />
     </edge>
     <edge source="com.zipcodewilmington.scientificcalculator.ScientificMethodCalculations" target="com.zipcodewilmington.scientificcalculator.CoreFeatures">
       <point x="66.75" y="-148.5" />
-      <point x="673.25" y="745.0" />
-      <point x="726.1373299319729" y="745.0" />
-      <point x="-27.75" y="82.5" />
+      <point x="200.25" y="419.0" />
+      <point x="553.1039682539688" y="419.0" />
+      <point x="-95.14285714285711" y="82.5" />
     </edge>
     <edge source="com.zipcodewilmington.scientificcalculator.Console" target="com.zipcodewilmington.scientificcalculator.CoreFeatures">
-      <point x="43.3125" y="-49.0" />
-      <point x="392.9498299319729" y="1417.0" />
-      <point x="750.5" y="1417.0" />
-      <point x="750.5" y="745.0" />
-      <point x="781.6373299319729" y="745.0" />
-      <point x="27.75" y="82.5" />
+      <point x="-96.25" y="-49.0" />
+      <point x="911.7289682539687" y="796.0" />
+      <point x="758.4742063492065" y="796.0" />
+      <point x="758.4742063492065" y="429.0" />
+      <point x="679.9611111111114" y="429.0" />
+      <point x="31.714285714285666" y="82.5" />
     </edge>
     <edge source="com.zipcodewilmington.scientificcalculator.CoreFeaturesCalculations" target="com.zipcodewilmington.scientificcalculator.Constants">
-      <point x="-1.1368683772161603E-13" y="-138.0" />
-      <point x="1033.407171201814" y="194.0" />
-      <point x="616.5143140589571" y="194.0" />
-      <point x="60.85714285714283" y="82.0" />
+      <point x="-115.0" y="-138.0" />
+      <point x="344.5" y="409.0" />
+      <point x="340.5047619047621" y="409.0" />
+      <point x="340.5047619047621" y="194.0" />
+      <point x="873.6726190476193" y="194.0" />
+      <point x="-60.85714285714283" y="82.0" />
     </edge>
     <edge source="com.zipcodewilmington.scientificcalculator.ScientificMethodCalculations" target="com.zipcodewilmington.scientificcalculator.Constants">
       <point x="-66.75" y="-148.5" />
-      <point x="539.75" y="204.0" />
-      <point x="555.6571712018142" y="204.0" />
-      <point x="0.0" y="82.0" />
+      <point x="66.75" y="184.0" />
+      <point x="843.2440476190478" y="184.0" />
+      <point x="-91.28571428571428" y="82.0" />
     </edge>
     <edge source="com.zipcodewilmington.scientificcalculator.Memory" target="com.zipcodewilmington.scientificcalculator.Console">
-      <point x="-47.75" y="71.5" />
-      <point x="309.75" y="1087.0" />
-      <point x="359.009778911565" y="1087.0" />
-      <point x="359.009778911565" y="1437.0" />
-      <point x="335.1998299319729" y="1437.0" />
-      <point x="-14.4375" y="-49.0" />
+      <point x="47.75" y="71.5" />
+      <point x="1173.2242063492065" y="786.0" />
+      <point x="1065.7289682539686" y="786.0" />
+      <point x="57.75" y="-49.0" />
     </edge>
     <edge source="com.zipcodewilmington.scientificcalculator.CoreFeatures" target="com.zipcodewilmington.scientificcalculator.CoreFeaturesCalculations">
-      <point x="0.0" y="-82.5" />
-      <point x="753.8873299319729" y="520.0" />
-      <point x="895.4071712018142" y="520.0" />
-      <point x="-138.0" y="138.0" />
+      <point x="-31.714285714285722" y="82.5" />
+      <point x="616.5325396825401" y="439.0" />
+      <point x="574.5" y="439.0" />
+      <point x="115.0" y="-138.0" />
     </edge>
     <edge source="com.zipcodewilmington.scientificcalculator.ScientificMethodTest" target="com.zipcodewilmington.scientificcalculator.ScientificMethod">
-      <point x="0.0" y="-159.5" />
-      <point x="876.1373299319729" y="1437.0" />
-      <point x="884.0" y="1437.0" />
-      <point x="0.0" y="137.5" />
+      <point x="68.33333333333326" y="-159.5" />
+      <point x="427.55753968253975" y="1269.0" />
+      <point x="826.625" y="1269.0" />
+      <point x="-82.0" y="137.5" />
     </edge>
     <edge source="com.zipcodewilmington.scientificcalculator.ScientificMethod" target="com.zipcodewilmington.scientificcalculator.CoreFeatures">
-      <point x="0.0" y="-137.5" />
-      <point x="884.0" y="745.0" />
-      <point x="837.1373299319729" y="745.0" />
-      <point x="83.25" y="82.5" />
+      <point x="-49.200000000000045" y="-137.5" />
+      <point x="859.425" y="934.0" />
+      <point x="744.7246753246754" y="934.0" />
+      <point x="744.7246753246754" y="439.0" />
+      <point x="648.2468253968259" y="439.0" />
+      <point x="0.0" y="82.5" />
     </edge>
     <edge source="com.zipcodewilmington.scientificcalculator.CustomFeaturesTest" target="com.zipcodewilmington.scientificcalculator.ScientificMethod">
-      <point x="-47.25" y="-71.5" />
-      <point x="1045.887329931973" y="1427.0" />
-      <point x="933.2" y="1427.0" />
-      <point x="49.19999999999999" y="137.5" />
+      <point x="47.25" y="-71.5" />
+      <point x="910.4742063492065" y="1289.0" />
+      <point x="990.625" y="1289.0" />
+      <point x="82.0" y="137.5" />
     </edge>
     <edge source="com.zipcodewilmington.scientificcalculator.MainApplication" target="com.zipcodewilmington.scientificcalculator.Console">
       <point x="0.0" y="-27.0" />
-      <point x="0.0" y="49.0" />
+      <point x="1136.125" y="934.0" />
+      <point x="1084.9789682539686" y="934.0" />
+      <point x="77.0" y="49.0" />
     </edge>
     <edge source="com.zipcodewilmington.scientificcalculator.CustomFeatures" target="com.zipcodewilmington.scientificcalculator.Constants">
-      <point x="0.0" y="-60.5" />
-      <point x="120.5" y="184.0" />
-      <point x="464.37145691609993" y="184.0" />
-      <point x="-91.28571428571428" y="82.0" />
+      <point x="60.25" y="-60.5" />
+      <point x="949.7242063492065" y="204.0" />
+      <point x="934.5297619047622" y="204.0" />
+      <point x="0.0" y="82.0" />
     </edge>
     <edge source="com.zipcodewilmington.scientificcalculator.Memory" target="com.zipcodewilmington.scientificcalculator.Constants">
-      <point x="-47.75" y="-71.5" />
-      <point x="309.75" y="204.0" />
-      <point x="525.2285997732429" y="204.0" />
-      <point x="-30.428571428571388" y="82.0" />
+      <point x="47.75" y="-71.5" />
+      <point x="1173.2242063492065" y="204.0" />
+      <point x="964.9583333333335" y="204.0" />
+      <point x="30.428571428571445" y="82.0" />
     </edge>
     <edge source="com.zipcodewilmington.scientificcalculator.ScientificMethodTest" target="com.zipcodewilmington.scientificcalculator.CoreFeaturesCalculations">
-      <point x="68.33333333333331" y="-159.5" />
-      <point x="944.4706632653063" y="1437.0" />
-      <point x="1060.7847222222222" y="1437.0" />
-      <point x="1060.7847222222222" y="530.0" />
-      <point x="1033.4071712018142" y="530.0" />
-      <point x="0.0" y="138.0" />
+      <point x="0.0" y="-159.5" />
+      <point x="359.2242063492065" y="796.0" />
+      <point x="344.5" y="796.0" />
+      <point x="-115.0" y="138.0" />
     </edge>
     <edge source="com.zipcodewilmington.scientificcalculator.CustomFeaturesTest" target="com.zipcodewilmington.scientificcalculator.CoreFeaturesCalculations">
-      <point x="47.25" y="-71.5" />
-      <point x="1140.387329931973" y="530.0" />
-      <point x="1102.407171201814" y="530.0" />
-      <point x="68.99999999999989" y="138.0" />
+      <point x="-47.25" y="-71.5" />
+      <point x="815.9742063492065" y="1259.0" />
+      <point x="675.2547619047621" y="1259.0" />
+      <point x="675.2547619047621" y="796.0" />
+      <point x="574.5" y="796.0" />
+      <point x="115.0" y="138.0" />
+    </edge>
+    <edge source="com.zipcodewilmington.scientificcalculator.CustomFeatures" target="com.zipcodewilmington.scientificcalculator.CoreFeatures">
+      <point x="-60.25" y="-60.5" />
+      <point x="829.2242063492065" y="419.0" />
+      <point x="711.6753968253972" y="419.0" />
+      <point x="63.428571428571445" y="82.5" />
     </edge>
     <edge source="com.zipcodewilmington.scientificcalculator.Console" target="com.zipcodewilmington.scientificcalculator.Memory">
-      <point x="14.4375" y="-49.0" />
-      <point x="364.0748299319729" y="1437.0" />
-      <point x="370.009778911565" y="1437.0" />
-      <point x="370.009778911565" y="1087.0" />
-      <point x="405.25" y="1087.0" />
-      <point x="47.75" y="71.5" />
+      <point x="19.25" y="-49.0" />
+      <point x="1027.2289682539686" y="776.0" />
+      <point x="1077.7242063492065" y="776.0" />
+      <point x="-47.75" y="71.5" />
     </edge>
     <edge source="com.zipcodewilmington.scientificcalculator.CoreFeaturesCalculations" target="com.zipcodewilmington.scientificcalculator.CoreFeatures">
-      <point x="-69.0" y="138.0" />
-      <point x="964.4071712018142" y="530.0" />
-      <point x="827.8873299319729" y="530.0" />
-      <point x="74.0" y="-82.5" />
+      <point x="0.0" y="-138.0" />
+      <point x="459.5" y="429.0" />
+      <point x="584.8182539682543" y="429.0" />
+      <point x="-63.428571428571445" y="82.5" />
     </edge>
     <edge source="com.zipcodewilmington.scientificcalculator.ScientificMethod" target="com.zipcodewilmington.scientificcalculator.Console">
-      <point x="-49.19999999999999" y="137.5" />
-      <point x="834.8000000000001" y="1437.0" />
-      <point x="450.6998299319729" y="1437.0" />
-      <point x="101.0625" y="-49.0" />
+      <point x="0.0" y="-137.5" />
+      <point x="908.625" y="944.0" />
+      <point x="930.9789682539687" y="944.0" />
+      <point x="-77.0" y="49.0" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="0.7000000000000001" x="254.5000000000001" y="432.5" />
+  <settings layout="Hierarchic Group" zoom="0.5184210526315789" x="737.5000000000002" y="821.2578616352203" />
   <SelectedNodes />
   <Categories>
     <Category>Fields</Category>

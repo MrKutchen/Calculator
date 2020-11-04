@@ -4,9 +4,20 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class ScientificMethod {
+
+    private Display displayValues;
+    private ScientificMethodCalculations functions;
+
     public static Scanner scanner = new Scanner(System.in);
 
-    public static void scientificMethodOptions() {
+
+    public ScientificMethod(Display displayValues) {
+        this.displayValues = displayValues;
+        this.functions = new ScientificMethodCalculations(displayValues);
+
+    }
+
+    public void scientificMethodOptions() {
         boolean powerOn = true;
         while (powerOn) {
             Console.println("\n" +
@@ -28,16 +39,16 @@ public class ScientificMethod {
                 int input = scanner.nextInt();
                 switch (input) {
                     case 1:
-                        CoreFeatures.changeDisplay();
+                        displayValues.changeDisplay();
                         break;
                     case 2:
-                        CoreFeatures.clearDisplay();
+                        displayValues.clearDisplay();
                         break;
                     case 3:
-                        currentDisplayMode();
+                        displayValues.currentDisplayMode();
                         break;
                     case 4:
-                        switchDisplayMode();
+                        displayValues.switchDisplayMode();
                         break;
                     case 5:
                         chooseDisplayMode();
@@ -55,11 +66,11 @@ public class ScientificMethod {
                         chooseLogFunction();
                         break;
                     case 10:
-                        ScientificMethodCalculations.factorial((int)Constants.display);
-                        CoreFeatures.currentDisplay();
+                        functions.factorial(displayValues);
+                        displayValues.currentDisplay();
                         break;
                     case 11:
-                        CoreFeatures.clearDisplay();
+                        displayValues.clearDisplay();
                         powerOn = false;
                         break;
                     default:
@@ -73,87 +84,37 @@ public class ScientificMethod {
         }
     }
 
-    public static void currentDisplayMode() {
-        System.out.println("\n" + "Current Display Mode - " + Constants.displayMode);
-        switch (Constants.displayMode) {
-            case "Binary":
-                System.out.println(Constants.displayModeValues);
-                break;
-            case "Octal":
-                System.out.println(Constants.displayModeValues);
-                break;
-            case "Hexadecimal":
-                System.out.println(Constants.displayModeValues);
-                break;
-            default:
-                System.out.println(Constants.display);
-                break;
-        }
-
-
-    }
-
-    public static void switchDisplayMode() {
-        int wrapInt = (int) Constants.display;
-        String firstDisplay = "Binary";
-        String secondDisplay = "Octal";
-        String thirdDisplay = "Hexadecimal";
-        String fourthDisplay = "Decimal";
-
-        if (Constants.displayModeCount == 1) {
-            Constants.displayMode = firstDisplay;
-            Constants.displayModeValues = Integer.toBinaryString(wrapInt);
-            System.out.println("\n" + "Current Display Mode = " +
-                    Constants.displayMode + " " + Integer.toBinaryString(wrapInt));
-            Constants.displayModeCount++;
-        } else if (Constants.displayModeCount == 2) {
-            Constants.displayMode = secondDisplay;
-            Constants.displayModeValues = Integer.toOctalString(wrapInt);
-            System.out.println("\n" + "Current Display Mode = " +
-                    Constants.displayMode + " " + Integer.toOctalString(wrapInt));
-            Constants.displayModeCount++;
-        } else if (Constants.displayModeCount == 3) {
-            Constants.displayMode = thirdDisplay;
-            Constants.displayModeValues = Integer.toHexString(wrapInt);
-            System.out.println("\n" + "Current Display Mode = " +
-                    Constants.displayMode + " " + Integer.toHexString(wrapInt));
-            Constants.displayModeCount++;
-        } else if (Constants.displayModeCount == 4) {
-            Constants.displayMode = fourthDisplay;
-            Constants.display = Integer.parseInt(String.valueOf(wrapInt));
-            System.out.println("\n" + "Current Display Mode = " +
-                    Constants.displayMode + " " + (double) Integer.parseInt(String.valueOf(wrapInt)));
-            Constants.displayModeCount = 1;
-        }
-    }
-
-    public static void chooseDisplayMode() {
+    public void chooseDisplayMode() {
         //[binary, octal, decimal, hexadecimal]
+        int wrapInt = (int) displayValues.getDisplay();
         try {
             System.out.println("\n" + "Choose which Display Mode you would like to use?\n" +
                     "1 - Binary, 2 - Octal, 3 - Hexadecimal, 4 - Decimal");
             int mode = scanner.nextInt();
-            int wrapInt = (int) Constants.display;
             switch (mode) {
                 case 1:
-                    Constants.displayMode = "Binary";
+                    displayValues.setDisplayMode("Binary");
+                    displayValues.setDisplayModeValues(Integer.toBinaryString(wrapInt));
                     System.out.println("\n" + "Current Display Mode = " +
-                            Constants.displayMode + " " + Integer.toBinaryString(wrapInt));
+                            displayValues.getDisplayMode() + " " + displayValues.getDisplayModeValues());
                     break;
                 case 2:
-                    Constants.displayMode = "Octal";
+                    displayValues.setDisplayMode("Octal");
+                    displayValues.setDisplayModeValues(Integer.toOctalString(wrapInt));
                     System.out.println("\n" + "Current Display Mode = " +
-                            Constants.displayMode + " " + Integer.toOctalString(wrapInt));
+                            displayValues.getDisplayMode() + " " + displayValues.getDisplayModeValues());
                     break;
                 case 3:
-                    Constants.displayMode = "Hexadecimal";
+                    displayValues.setDisplayMode("Hexadecimal");
+                    displayValues.setDisplayModeValues(Integer.toHexString(wrapInt));
                     System.out.println("\n" + "Current Display Mode = " +
-                            Constants.displayMode + " " + Integer.toHexString(wrapInt));
+                            displayValues.getDisplayMode() + " " + displayValues.getDisplayModeValues());
                     break;
                 case 4:
-                    Constants.displayMode = "Decimal";
+                    displayValues.setDisplayMode("Decimal");
+                    displayValues.setDisplayModeValues(String.valueOf(wrapInt));
                     System.out.println("\n" + "Current Display Mode = " +
-                            Constants.displayMode + " " + Integer.parseInt(String.valueOf(wrapInt)));
+                            displayValues.getDisplayMode() + " " + displayValues.getDisplayModeValues());
                     break;
                 default:
                     System.out.println("\n" + "Err - Choose a correct option, you're a Zip Coder!");
@@ -165,35 +126,35 @@ public class ScientificMethod {
         }
     }
 
-    public static void trigOptions() {
+    public void trigOptions() {
         try {
             System.out.println("\n" + "Choose which trig function you would like to use on the current display value?\n" +
                     "1 - Sine, 2 - Cosine, 3 - Tangent, 4 - Inverse Sine, 5 - Inverse Cosine, 6 - Inverse Tangent");
             int trigFunctions = scanner.nextInt();
             switch (trigFunctions) {
                 case 1:
-                    ScientificMethodCalculations.getSine(Constants.display);
-                    CoreFeatures.currentDisplay();
+                    displayValues.setDisplay(functions.getSine(displayValues));
+                    displayValues.currentDisplay();
                     break;
                 case 2:
-                    ScientificMethodCalculations.getCosine(Constants.display);
-                    CoreFeatures.currentDisplay();
+                    displayValues.setDisplay(functions.getCosine(displayValues));
+                    displayValues.currentDisplay();
                     break;
                 case 3:
-                    ScientificMethodCalculations.getTangent(Constants.display);
-                    CoreFeatures.currentDisplay();
+                    displayValues.setDisplay(functions.getTangent(displayValues));
+                    displayValues.currentDisplay();
                     break;
                 case 4:
-                    ScientificMethodCalculations.getInSine(Constants.display);
-                    CoreFeatures.currentDisplay();
+                    displayValues.setDisplay(functions.getInSine(displayValues));
+                    displayValues.currentDisplay();
                     break;
                 case 5:
-                    ScientificMethodCalculations.getInCosine(Constants.display);
-                    CoreFeatures.currentDisplay();
+                    displayValues.setDisplay(functions.getInCosine(displayValues));
+                    displayValues.currentDisplay();
                     break;
                 case 6:
-                    ScientificMethodCalculations.getInTangent(Constants.display);
-                    CoreFeatures.currentDisplay();
+                    displayValues.setDisplay(functions.getInTangent(displayValues));
+                    displayValues.currentDisplay();
                     break;
                 default:
                     System.out.println("\n" + "Err - Choose a correct option, you're a Zip Coder!");
@@ -205,42 +166,42 @@ public class ScientificMethod {
         }
     }
 
-    public static void switchRadAndDeg() {
-        if (Constants.radOrDeg == false) {
+    public void switchRadAndDeg() {
+        if (!displayValues.isRadOrDeg()) {
             convToDegree();
-            Constants.radOrDeg = true;
-        } else if (Constants.radOrDeg == true) {
+            displayValues.setRadOrDeg(true);
+        } else if (displayValues.isRadOrDeg()) {
             convToRad();
-            Constants.radOrDeg = false;
+            displayValues.setRadOrDeg(false);
         }
     }
 
-    public static void chooseRadAndDeg() {
+    public void chooseRadAndDeg() {
         System.out.println("Please choose if you would like Radians or Degrees?\n" +
                 "1 - Degrees, 2 - Radians");
         int result = scanner.nextInt();
-        if (result == 1  && !Constants.radOrDeg) {
+        if (result == 1  && !displayValues.isRadOrDeg()) {
             convToDegree();
-            Constants.radOrDeg = true;
-        } else if (result == 2 && Constants.radOrDeg) {
+            displayValues.setRadOrDeg(true);
+        } else if (result == 2 && displayValues.isRadOrDeg()) {
             convToRad();
-            Constants.radOrDeg = false;
+            displayValues.setRadOrDeg(false);
         } else {
-            System.out.println(Constants.display + " - Degrees");
+            System.out.println(displayValues.getDisplay() + " - Degrees");
         }
     }
 
-    public static void convToDegree() {
-        Constants.display *= 57.2958;
-        System.out.println(Constants.display + " - Degree");
+    public void convToDegree() {
+        this.displayValues.setDisplay(displayValues.getDisplay() * 57.2958);
+        System.out.println(displayValues.getDisplay() + " - Degree");
     }
 
-    public static void convToRad() {
-        Constants.display /= 57.2958;
-        System.out.println(Constants.display + " - Radians");
+    public void convToRad() {
+        this.displayValues.setDisplay(displayValues.getDisplay() / 57.2958);
+        System.out.println(displayValues.getDisplay() + " - Radians");
     }
 
-    public static void chooseLogFunction() {
+    public void chooseLogFunction() {
         //[binary, octal, decimal, hexadecimal]
         try {
             System.out.println("\n" + "Choose which Log Function you would like to use on the current display value?\n" +
@@ -248,16 +209,16 @@ public class ScientificMethod {
             int logs = scanner.nextInt();
             switch (logs) {
                 case 1:
-                    ScientificMethodCalculations.log((int)Constants.display);
+                    displayValues.setDisplay(functions.log(displayValues));
                     break;
                 case 2:
-                    ScientificMethodCalculations.inverseLog((int)Constants.display);
+                    displayValues.setDisplay(functions.inverseLog(displayValues));
                     break;
                 case 3:
-                    ScientificMethodCalculations.naturalLog((int)Constants.display);
+                    displayValues.setDisplay(functions.naturalLog(displayValues));
                     break;
                 case 4:
-                    ScientificMethodCalculations.inverseNaturalLog((int)Constants.display);
+                    displayValues.setDisplay(functions.inverseNaturalLog(displayValues));
                     break;
                 default:
                     System.out.println("\n" + "Err - Choose a correct option, you're a Zip Coder!");
