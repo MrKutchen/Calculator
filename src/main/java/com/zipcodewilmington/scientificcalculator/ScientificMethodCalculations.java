@@ -114,4 +114,3 @@ public class ScientificMethodCalculations {
         //returns euler’s number 'e' raised to the power of a double value
     }
 }
-
