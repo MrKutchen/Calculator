@@ -9,8 +9,8 @@ import java.util.Scanner;
 
 public class CoreFeatures {
 
-    private Display displayValues;
-    private CoreFeaturesCalculations calculations;
+    private final Display displayValues;
+    private final CoreFeaturesCalculations calculations;
 
     public CoreFeatures(Display displayValues, CoreFeaturesCalculations calculations) {
         this.displayValues = displayValues;
