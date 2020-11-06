@@ -16,7 +16,7 @@ public class CustomFeatures {
             Console.println("\n" +
                     "Please choose from the following options:\n" +
                     "1 - Change the Display Value\n" +
-                    "2 - Convert the Display to Radius\n" +
+                    "2 - Find the area of the Radius\n" +
                     "3 - Try out some Conversions\n" +
                     "4 - Reset Display\n" +
                     "5 - Main Menu\n" + "\n" +
@@ -60,11 +60,11 @@ public class CustomFeatures {
 
     public static void conversion(Display displayValues) {
         System.out.println("\n" + "1 - To convert " + displayValues.getDisplay() + " mm to cm\n" +
-                "2 - Convert " + String.format("%.3f", displayValues.getDisplay()) + " cm to mm\n" +
-                "3 - " + String.format("%.3f", displayValues.getDisplay()) + " cm to inches\n" +
-                "4 - Convert " + String.format("%.3f", displayValues.getDisplay()) + " inches to cm\n" +
-                "5 - Convert " + String.format("%.3f", displayValues.getDisplay()) + " inches to feet\n" +
-                "6 - Convert " + String.format("%.3f", displayValues.getDisplay()) + " feet to inches");
+                "2 - Convert " + String.format("%.1f", displayValues.getDisplay()) + " cm to mm\n" +
+                "3 - " + String.format("%.1f", displayValues.getDisplay()) + " cm to inches\n" +
+                "4 - Convert " + String.format("%.1f", displayValues.getDisplay()) + " inches to cm\n" +
+                "5 - Convert " + String.format("%.1f", displayValues.getDisplay()) + " inches to feet\n" +
+                "6 - Convert " + String.format("%.1f", displayValues.getDisplay()) + " feet to inches");
 
         try {
             int k = scanner.nextInt();

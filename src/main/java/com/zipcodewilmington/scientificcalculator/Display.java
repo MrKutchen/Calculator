@@ -102,21 +102,21 @@ public class Display {
             setDisplayModeValues(Integer.toBinaryString(wrapInt));
             System.out.println("\n" + "Current Display Mode = " +
                     getDisplayMode() + " " + getDisplayModeValues());
-            setDisplayModeCount(getDisplayModeCount() +1);
+            setDisplayModeCount(getDisplayModeCount() + 1);
 
         } else if (getDisplayModeCount() == 2) {
             setDisplayModeValues("Octal");
             setDisplayModeValues(Integer.toOctalString(wrapInt));
             System.out.println("\n" + "Current Display Mode = " +
                     getDisplayMode() + " " + getDisplayModeValues());
-            setDisplayModeCount(getDisplayModeCount() +1);
+            setDisplayModeCount(getDisplayModeCount() + 1);
 
         } else if (getDisplayModeCount() == 3) {
             setDisplayMode("Hexadecimal");
             setDisplayModeValues(Integer.toHexString(wrapInt));
             System.out.println("\n" + "Current Display Mode = " +
                     getDisplayMode() + " " + getDisplayModeValues());
-            setDisplayModeCount(getDisplayModeCount() +1);
+            setDisplayModeCount(getDisplayModeCount() + 1);
 
         } else if (getDisplayModeCount() == 4) {
             setDisplayMode("Decimal");
